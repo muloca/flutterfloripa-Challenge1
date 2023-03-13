@@ -12,35 +12,38 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            top: -80,
-            left: -90,
-            child: circle(
-              'assets/bg-blur-1.png',
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Positioned(
+              top: -80,
+              left: -90,
+              child: circle(
+                'assets/bg-blur-1.png',
+              ),
             ),
-          ),
-          Positioned(
-            bottom: 100,
-            left: -190,
-            child: circle(
-              'assets/bg-blur-2.png',
+            Positioned(
+              bottom: 100,
+              left: -190,
+              child: circle(
+                'assets/bg-blur-2.png',
+              ),
             ),
-          ),
-          Positioned(
-            bottom: -100,
-            right: -200,
-            child: circle(
-              'assets/bg-blur-3.png',
+            Positioned(
+              bottom: -100,
+              right: -200,
+              child: circle(
+                'assets/bg-blur-3.png',
+              ),
             ),
-          ),
-          header(context),
-          const SizedBox(
-            height: 48,
-          ),
-        ],
+            header(context),
+            const SizedBox(
+              height: 48,
+            ),
+          ],
+        ),
       ),
     );
   }
